@@ -1,0 +1,117 @@
+.header {
+  background-color: var(--white);
+  padding: 1.2rem 0;
+  /* Increased padding */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  /* Softer, deeper shadow */
+  position: relative;
+  z-index: 10;
+}
+
+.container {
+  max-width: 95%;
+  /* Widened to match hero section */
+  margin: 0 auto;
+  padding: 0 1rem;
+  /* Reduced padding to align with hero */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoText {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-green);
+  font-family: 'Arial', sans-serif;
+  /* Or custom font */
+  letter-spacing: -1px;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navList {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0px;
+  left: 0;
+  background-color: var(--primary-green);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--primary-green);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.dashboardBtn {
+  background-color: var(--primary-green);
+  color: var(--white);
+  padding: 0.7rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 92, 0, 0.2);
+}
+
+.dashboardBtn:hover {
+  background-color: var(--secondary-green);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 92, 0, 0.3);
+}
+
+.userIconWrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  color: #888;
+}
+
+.userIconWrapper:hover {
+  transform: scale(1.1);
+  color: var(--primary-green);
+}
+
+.userIcon {
+  width: 100%;
+  height: 100%;
+}
