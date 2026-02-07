@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import styles from './page.module.css';
+import InfoSection from '../components/InfoSection';
+import NewsletterSection from '../components/NewsletterSection';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
@@ -8,7 +11,7 @@ export default function Home() {
         <div className={styles.content}>
           <span className={styles.subtitle}>Keep Learning</span>
           <h1 className={styles.title}>
-            School Of <span className={styles.islamContainer}>Islam<span className={styles.smileCurve}></span></span>
+            School <span className="bounce" style={{ color: 'var(--accent-yellow)' }}>O</span>f <span className={styles.islamContainer}>Islam<span className={styles.smileCurve}></span></span>
           </h1>
           <p className={styles.projectBy}>A Project by <span className={styles.yellowUnderline}>YouthLink</span></p>
 
@@ -24,6 +27,9 @@ export default function Home() {
         </div>
         <div className={styles.backgroundCurve}></div>
       </section>
+      <InfoSection />
+      <NewsletterSection />
+      <Footer />
     </main>
   );
 }

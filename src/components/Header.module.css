@@ -1,11 +1,15 @@
 .header {
   background-color: var(--white);
-  padding: 1.2rem 0;
-  /* Increased padding */
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   /* Softer, deeper shadow */
-  position: relative;
-  z-index: 10;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  /* Ensure it stays on top */
+  width: 100%;
 }
 
 .container {
@@ -17,21 +21,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  /* Ensure flex container takes full available width */
+  position: relative;
+  /* For absolute centering of nav */
 }
 
-.logoText {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--primary-green);
-  font-family: 'Arial', sans-serif;
-  /* Or custom font */
-  letter-spacing: -1px;
-}
+/* ... logoText ... */
 
 .nav {
-  flex: 1;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .navList {
@@ -62,11 +68,13 @@
   transition: width 0.3s ease;
 }
 
-.navLink:hover {
+.navLink:hover,
+.navLink.active {
   color: var(--primary-green);
 }
 
-.navLink:hover::after {
+.navLink:hover::after,
+.navLink.active::after {
   width: 100%;
 }
 

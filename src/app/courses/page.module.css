@@ -1,0 +1,442 @@
+.main {
+    min-height: 100vh;
+    padding: 3rem 5%;
+    background-color: #f4f6f4;
+    /* Slightly warmer/greener gray */
+    font-family: var(--font-poppins), sans-serif;
+}
+
+.header {
+    margin-bottom: 3rem;
+    /* text-align: left; Default */
+}
+
+.breadcrumb {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    max-width: 600px;
+}
+
+.highlight {
+    font-weight: 700;
+    color: var(--secondary-green);
+}
+
+.cardMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* Align to bottom like screenshot */
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+}
+
+.ratingWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.ratingScore {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.ratingScore::after {
+    content: '/5';
+    font-weight: 400;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    margin-left: 2px;
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+}
+
+.price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    letter-spacing: -0.5px;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    background: var(--white);
+    padding: 0.8rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.viewToggles {
+    display: flex;
+    background: #f0f2f0;
+    padding: 0.25rem;
+    border-radius: 10px;
+    gap: 0;
+}
+
+.viewBtn {
+    border: none;
+    background: transparent;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+}
+
+.viewBtn.active {
+    background: var(--white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    color: var(--primary-green);
+    font-weight: 700;
+}
+
+.resultsCount {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-left: 1.5rem;
+    font-weight: 500;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.searchWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    padding-right: 2.8rem;
+    border: 1px solid #e8e8e8;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.searchInput:focus {
+    background-color: var(--white);
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(0, 92, 0, 0.05);
+}
+
+.searchIcon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: #aaa;
+}
+
+.sortSelect {
+    padding: 0.8rem 1.2rem;
+    border: 1px solid #e8e8e8;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    outline: none;
+    cursor: pointer;
+    min-width: 160px;
+    transition: all 0.2s ease;
+    color: var(--text-dark);
+}
+
+.sortSelect:hover,
+.sortSelect:focus {
+    background-color: var(--white);
+    border-color: #d0d0d0;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+    gap: 2rem;
+}
+
+.listGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 900px;
+    /* Constrain list width */
+    margin: 0 auto;
+}
+
+.listGrid .card {
+    width: 100%;
+    flex-direction: row;
+    /* Image Left, Text Right */
+    height: 220px;
+    align-items: center;
+    padding: 0;
+    /* Remove internal padding for flush image */
+}
+
+.listGrid .cardImageWrapper {
+    width: 40%;
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+    /* Flush edges */
+    background: #f8f9fa;
+    /* Slight contrast in list view */
+}
+
+.listGrid .cardContent {
+    width: 60%;
+    padding: 1.5rem 2rem;
+    align-items: flex-start;
+    /* Align text to left */
+}
+
+/* Adjust card elements for list view */
+.listGrid .cardTitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.listGrid .cardMeta {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    margin-top: auto;
+    /* Push to bottom */
+}
+
+.listGrid .previewBtn {
+    margin-top: 1rem;
+    align-self: flex-start;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 20px;
+    /* Softer, rounder corners */
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Bouncy transition */
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 10px;
+    width: 340px;
+    max-width: 100%;
+    animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+/* Stagger animation for first few items (approximate) */
+.card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    /* Pop up and slight grow */
+    box-shadow: 0 15px 35px rgba(0, 92, 0, 0.12);
+    /* Green-tinted shadow */
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+/* Glow effect on hover */
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 16px;
+    box-shadow: inset 0 0 0 1px var(--primary-green);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.cardImageWrapper {
+    position: relative;
+    height: 200px;
+    /* Increased height */
+    background: var(--white);
+    /* White background for clean look */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    /* Rounded corners for image */
+    margin: 0 auto;
+    /* Ensure wrapper itself is centered if width < 100% (though standard block is 100%) */
+    width: 100%;
+}
+
+.cardImage {
+    max-width: 100%;
+    /* Changed from width: 100% to allow centering if small */
+    max-height: 100%;
+    object-fit: contain;
+    /* Ensures full image is visible */
+    transition: transform 0.5s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.card:hover .cardImage {
+    transform: scale(1.1) rotate(2deg);
+    /* Cute tilt and zoom */
+}
+
+/* Removed cardImageContent styles as we are moving to standard current page styles */
+
+.cardContent {
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    /* Adjusted padding */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+.cardTitle {
+    font-size: 1.1rem;
+    /* Smaller title */
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+.cardAuthor {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.previewBtn {
+    width: 100%;
+    padding: 0.6rem;
+    /* Smaller button */
+    border: 1px solid var(--primary-green);
+    /* Thinner border */
+    background: transparent;
+    color: var(--primary-green);
+    border-radius: 8px;
+    /* Smaller radius */
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.previewBtn:hover,
+.card:hover .previewBtn {
+    background: var(--primary-green);
+    color: var(--white);
+    transform: scale(1.05);
+    /* Gentle pop */
+    box-shadow: 0 4px 15px rgba(0, 92, 0, 0.2);
+}
+
+.previewBtn:active {
+    transform: scale(0.95);
+    /* Click squeeze */
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 2rem 1rem;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .searchWrapper {
+        max-width: 100%;
+    }
+}

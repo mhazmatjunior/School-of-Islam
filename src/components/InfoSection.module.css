@@ -1,0 +1,226 @@
+.sectionWrapper {
+    width: 100%;
+    background-color: var(--white);
+    /* Light theme for contrast */
+    position: relative;
+    z-index: 5;
+    position: relative;
+    z-index: 5;
+    position: relative;
+    z-index: 5;
+    min-height: 100vh;
+    /* Full window height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5vh;
+    /* Responsive bottom padding */
+}
+
+.container {
+    padding: 1rem 1rem;
+    /* Drastically reduced padding */
+    max-width: 95%;
+    margin: 0 auto;
+    color: var(--text-dark);
+    /* Dark text on white bg */
+    display: flex;
+    /* Use flex to distribute vertical space */
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+/* Tabs */
+.tabsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    /* Reduced */
+    position: relative;
+}
+
+.tabs {
+    display: flex;
+    gap: 2rem;
+    /* Reduced */
+    margin-bottom: 0.5rem;
+}
+
+.tab {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1.25rem;
+    /* Reduced */
+    font-weight: 500;
+    color: var(--text-light);
+    /* Darker inactive color */
+    cursor: pointer;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tab:hover {
+    color: var(--primary-green);
+}
+
+.tab.active {
+    color: var(--primary-green);
+    /* Active color matches theme */
+    font-weight: 600;
+}
+
+.tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    /* Tighter */
+    content: '';
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-green);
+    box-shadow: 0 0 5px rgba(0, 92, 0, 0.3);
+}
+
+.tabLine {
+    width: 60%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Subtle dark line */
+    margin-top: -1px;
+}
+
+/* Content */
+.content {
+    text-align: center;
+    max-width: 1100px;
+    /* Enlarged from 900px */
+    margin: 1rem auto 5rem;
+    /* Increased bottom margin for gap */
+    animation: fadeIn 0.5s ease-out;
+}
+
+.text {
+    font-size: 1.35rem;
+    /* Increased from 1.1rem */
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* Partners Section */
+.partnersSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    /* Increased top padding */
+    max-width: 95%;
+    /* Use full width */
+    margin: 0 auto;
+    width: 100%;
+}
+
+.partnersText {
+    flex: 1;
+}
+
+.partnersTitle {
+    font-size: 2.5rem;
+    /* Reduced from 3rem */
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.highlight {
+    position: relative;
+    z-index: 1;
+    color: #3b82f6;
+    /* Blue from image */
+}
+
+/* Let's stick to theme */
+.highlight {
+    color: var(--primary-green);
+    /* Use theme green or yellow */
+    color: #3b82f6;
+    /* Keeping blue to match request for now, or suggest theme color */
+}
+
+/* Actually user said "according to our current theme" so I should use accent yellow or primary green */
+.highlight {
+    color: var(--accent-yellow);
+    /* Yellow from theme */
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::after {
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-yellow);
+    border-radius: 2px;
+}
+
+.partnersDesc {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    max-width: 400px;
+    line-height: 1.4;
+}
+
+.partnersBtn {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 0.7rem 1.8rem;
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: not-allowed;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.logos {
+    flex: 1;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+}
+
+.logoPlaceholder {
+    width: 120px;
+    /* Reduced from 150px */
+    height: 120px;
+    /* Reduced from 150px */
+    background: rgba(0, 92, 0, 0.05);
+    /* Very light green tint */
+    border: 1px solid rgba(0, 92, 0, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-green);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
